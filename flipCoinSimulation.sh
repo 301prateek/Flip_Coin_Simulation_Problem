@@ -34,8 +34,10 @@ done
 echo "Heads won: $headCount times"
 echo "Tails won: $tailCount times"
 
+#Checking the difference between heads and tails is minimum 2 and display winner.
 heads=0
 tails=0
+
 while(true)
 do
 	coin=$((RANDOM%2))
@@ -51,6 +53,7 @@ do
 
 	diff1=$(($heads - $tails))
 	diff2=$(($tails - $heads))
+
 	if [ $heads -eq $tails ]
 	then
 		continue
@@ -59,15 +62,16 @@ do
 	then
 		if [ $tails -lt $heads ]
 		then
-			echo "Tails wins"
+			echo "Heads wins => total: $heads"
 			break
 		elif [ $tails -gt $heads ]
 		then
-			echo "Heads wins"
+			echo "Tails wins => total: $tails"
 			break
 
 		fi
 	fi
 
 done
+
 
